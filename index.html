@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173a49">
+  <title>Element Pathways</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead"><div><p class="eyebrow">Environmental science · matter in motion</p><h1>Element Pathways</h1><p>Find the form. Place it in a reservoir. Explain what happens next.</p></div><button id="change-cycle" class="ghost" hidden>Change cycle</button></header>
+    <section id="chooser" aria-labelledby="choose-title">
+      <h2 id="choose-title">Choose a cycle</h2><p>Each cycle has five clues. Draw them one at a time in a shuffled order.</p>
+      <div id="cycle-choices" class="cycle-choices"></div>
+    </section>
+    <section id="game" hidden aria-label="Cycle game">
+      <div class="status"><div><span id="cycle-name" class="tag"></span><strong id="progress-text"></strong></div><div id="progress-dots" class="progress-dots" aria-label="Progress"></div></div>
+      <div class="layout">
+        <section class="workbench">
+          <div class="diagram-heading"><h2>Where does it belong?</h2><p>Select a form, then click a labeled spot on the landscape. You can also drag a form onto a spot.</p></div>
+          <div id="scene" class="scene"><img id="scene-image" alt="Blank cycle landscape" draggable="false"><div id="hotspots" class="hotspots"></div></div>
+          <p class="scene-note">Locations are simplified examples of reservoirs. Several forms can belong to the same reservoir.</p>
+        </section>
+        <aside class="panel">
+          <div class="card-top"><span class="pill">CLUE</span><span id="card-number"></span></div>
+          <h2 id="clue-title"></h2><p id="clue-text" class="clue-text"></p>
+          <div id="form-stage"><h3>1. Choose the form</h3><div id="form-options" class="form-options"></div><p id="form-hint" class="hint">Then choose its location on the image.</p></div>
+          <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+          <div id="reveal" class="reveal" hidden><div class="card-top"><span class="pill warm">TURN OVER THE CARD</span></div><p id="reveal-text"></p><h3 id="bonus-title">Think it through</h3><p id="bonus-question"></p><div id="bonus-options" class="bonus-options"></div><p id="bonus-feedback" class="bonus-feedback" aria-live="polite"></p><button id="next-button" class="primary" hidden>Next clue</button></div>
+        </aside>
+      </div>
+      <section id="complete" class="complete" hidden><h2>Cycle complete</h2><p id="complete-summary"></p><button id="restart-cycle" class="primary">Play this cycle again</button><button id="pick-cycle" class="secondary">Choose another cycle</button></section>
+    </section>
+  </main>
+</body>
+</html>
